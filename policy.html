@@ -8,22 +8,24 @@
   <link rel="canonical" href="https://cloud5.ae/policy.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>🧁</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FF3399'/%3E%3Cpath transform='translate(8 10) scale(3)' fill='%23FFFFFF' d='M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z'/%3E%3C/svg%3E" />
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <!-- Navigation -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="index.html" class="brand">
-        <span class="brand__mark">☁</span>
-        <span class="brand__name">Cloud<span class="brand__five">5</span></span>
+      <a href="index.html" class="brand" aria-label="Cloud5 — home">
+        <svg class="brand__cloud" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/></svg>
+        <span class="brand__name">cloud<em>5</em></span>
       </a>
-      <nav class="nav__links" id="navLinks">
+      <nav class="nav__links" id="navLinks" aria-label="Main navigation">
         <a href="index.html#story">Our Story</a>
         <a href="index.html#menu">Menu</a>
-        <a href="index.html#values">Why Cloud5</a>
+        <a href="index.html#how">How to Order</a>
         <a href="index.html#order" class="btn btn--sm">Order Now</a>
       </nav>
       <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
@@ -32,66 +34,66 @@
     </div>
   </header>
 
-  <!-- Policy -->
-  <main class="policy">
-    <div class="container">
-      <span class="eyebrow">Cloud5</span>
-      <h1>Order &amp; Refund Policy</h1>
+  <main id="main">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Cloud5</span>
+        <h1>Order &amp; Refund Policy</h1>
+        <p>Everything is baked fresh to order, so here's exactly how orders, changes and refunds work.</p>
+      </div>
+    </div>
 
-      <section>
-        <h2>Orders &amp; lead times</h2>
-        <p>Everything at Cloud5 is made to order — nothing sits on a shelf. Please confirm your lead time with us on WhatsApp when you place your order.</p>
-      </section>
+    <div class="policy">
+      <div class="container policy__wrap">
 
-      <section>
-        <h2>Cancellations</h2>
-        <p>Orders can be cancelled up to 48 hours before the agreed delivery or pickup date.</p>
-      </section>
+        <section id="orders">
+          <h2><svg class="cat__cloud" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/></svg>Orders &amp; lead times</h2>
+          <p>Every item is <strong>made to order</strong> — nothing sits on a shelf. Once your order is confirmed on WhatsApp or Instagram, delivery is within <strong>24&ndash;48 hours of confirmation</strong> across Dubai (AED 30), or you can pick up for free from Umm Al Sheif — we share the exact location on WhatsApp when your order is confirmed.</p>
+        </section>
 
-      <section>
-        <h2>Quality issues</h2>
-        <p>If something isn't right, contact us within 24 hours of delivery with a photo — we'll arrange a replacement or refund.</p>
-      </section>
+        <section id="cancellations">
+          <h2><svg class="cat__cloud" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/></svg>Cancellations</h2>
+          <p>You can cancel or change your order <strong>up to 48 hours before the agreed delivery or pickup date</strong>. After that, baking has usually started and we can no longer cancel.</p>
+        </section>
 
-      <section>
-        <h2>Perishable goods</h2>
-        <p>Our products are perishable, so we can't accept returns. Refrigerate cream-based desserts and consume everything within the advised window.</p>
-      </section>
+        <section id="quality">
+          <h2><svg class="cat__cloud" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/></svg>Quality issues</h2>
+          <p>If something isn't right with your order, contact us on WhatsApp <strong>within 24 hours of receiving it, with a photo</strong>. We'll make it right with a <strong>replacement or a refund</strong>.</p>
+        </section>
 
-      <section>
-        <h2>Allergens</h2>
-        <p>Our kitchen handles gluten, eggs, dairy, tree nuts, peanuts, sesame, and soy — ask us about any allergy before ordering.</p>
-      </section>
+        <section id="perishables">
+          <h2><svg class="cat__cloud" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/></svg>Perishable goods</h2>
+          <p>Because everything we make is fresh and perishable, <strong>we can't accept returns</strong>. Please refrigerate cream-based desserts (cheesecakes, tiramisu and similar) as soon as they arrive.</p>
+        </section>
 
-      <section>
-        <h2>Contact</h2>
-        <p>Instagram: <a href="https://www.instagram.com/cloud5.ae/" target="_blank" rel="noopener">@cloud5.ae</a> · WhatsApp: <a data-wa href="index.html#order" target="_blank" rel="noopener">message us</a></p>
-      </section>
+        <section id="allergens">
+          <h2><svg class="cat__cloud" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/></svg>Allergens</h2>
+          <p>Our kitchen handles <strong>gluten, eggs, dairy, tree nuts, peanuts, sesame, and soy</strong>. Even items without these ingredients are prepared in the same kitchen — please tell us about any allergy before ordering.</p>
+        </section>
 
-      <p class="policy__license">Licensed home-based food business — Dubai DET Professional License No. 1642166 · Dubai Unified License FH1229</p>
+        <section id="contact">
+          <h2><svg class="cat__cloud" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/></svg>Contact</h2>
+          <p>The fastest way to reach us is <a data-wa href="index.html#order" target="_blank" rel="noopener">WhatsApp</a>, or send a DM on <a href="https://www.instagram.com/cloud5.ae/" target="_blank" rel="noopener">Instagram @cloud5.ae</a>.</p>
+          <p>Licensed home-based food business — Dubai DET Professional License No. 1642166 · Dubai Unified License FH1229.</p>
+        </section>
+
+        <div class="policy__back">
+          <a class="btn btn--ghost" href="index.html">&larr; Back to Cloud5</a>
+        </div>
+
+      </div>
     </div>
   </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <a href="index.html" class="brand"><span class="brand__mark">☁</span><span class="brand__name">Cloud<span class="brand__five">5</span></span></a>
-        <p>Homemade sweets, baked with love in Dubai. Every bite feels like you're on Cloud5.</p>
-      </div>
-      <div class="footer__cols">
-        <div><h4>Explore</h4><a href="index.html#story">Our Story</a><a href="index.html#menu">Menu</a><a href="index.html#values">Why Cloud5</a><a href="index.html#order">Order Now</a></div>
-        <div><h4>Order &amp; Info</h4><a data-wa href="index.html#order" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/cloud5.ae/" target="_blank" rel="noopener">Instagram</a><a href="index.html#menu">Seasonal specials</a><a href="policy.html">Order &amp; Refund Policy</a></div>
-      </div>
-    </div>
-    <div class="container footer__legal">
+    <div class="container footer__legal" style="border-top: 0; padding-top: 48px;">
       <p>Licensed home-based food business — Dubai DET Professional License No. 1642166 · Dubai Unified License FH1229</p>
-      <p>Our kitchen handles gluten, eggs, dairy, tree nuts, peanuts, sesame, and soy — ask us about any allergy before ordering.</p>
-      <p><a href="policy.html">Orders, cancellations &amp; refunds →</a></p>
+      <p>Our kitchen handles gluten, eggs, dairy, tree nuts, peanuts, sesame, and soy — tell us about any allergy before ordering.</p>
     </div>
     <div class="container footer__bottom">
-      <span>© <span id="year"></span> Cloud5 · Handmade in Dubai 🇦🇪</span>
-      <span class="footer__tag">Made with ❤️ &amp; real ingredients</span>
+      <span>&copy; <span id="year"></span> Cloud5 · Handmade in Dubai</span>
+      <span><a href="index.html">cloud5.ae</a> · <a href="https://www.instagram.com/cloud5.ae/" target="_blank" rel="noopener">Instagram</a> · <a data-wa href="index.html#order" target="_blank" rel="noopener">WhatsApp</a></span>
     </div>
   </footer>
 

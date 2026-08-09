@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  // ---- Set your bakery WhatsApp number here (international format, digits only) ----
+  // ---- Bakery WhatsApp number (international format, digits only) ----
   var WHATSAPP_NUMBER = "971508556603";
 
   // Sticky nav shadow
@@ -33,15 +33,21 @@
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  // WhatsApp links — every element with a data-wa attribute gets a wa.me href
-  var waBase = "Hi Cloud5! I'd love to place an order 🧁";
+  // WhatsApp links — every element with a data-wa attribute gets a wa.me href.
+  // Elements with data-wa-item prefill that item's name in the message.
+  var waBase = "Hi Cloud5! I'd love to place an order ☁️";
   function waLink(text) {
     var msg = encodeURIComponent(text || waBase);
     return WHATSAPP_NUMBER
       ? "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg
       : "https://wa.me/?text=" + msg;
   }
-  document.querySelectorAll("[data-wa]").forEach(function (el) { el.href = waLink(); });
+  document.querySelectorAll("[data-wa]").forEach(function (el) {
+    var item = el.getAttribute("data-wa-item");
+    el.href = item
+      ? waLink("Hi Cloud5! I'd love to order: " + item + " ☁️")
+      : waLink();
+  });
 
   // Order form -> opens WhatsApp with the details prefilled
   var form = document.getElementById("orderForm");
@@ -54,35 +60,39 @@
       var details = document.getElementById("details").value.trim();
 
       if (!name || !phone || !details) {
-        note.style.color = "#c0392b";
+        note.classList.add("is-error");
         note.textContent = "Please fill in your name, number and what you'd like to order.";
         return;
       }
 
       var text =
-        "Hi Cloud5! 🧁\nName: " + name +
+        "Hi Cloud5! ☁️\nName: " + name +
         "\nWhatsApp: " + phone +
         "\nOrder: " + details;
 
       window.open(waLink(text), "_blank", "noopener");
-      note.style.color = "";
-      note.textContent = "🎉 Thank you, " + name + "! Opening WhatsApp to send your order to Cloud5…";
+      note.classList.remove("is-error");
+      note.textContent = "Thank you, " + name + "! Opening WhatsApp to send your order to Cloud5…";
       form.reset();
     });
   }
 
-  // Scroll reveal
-  var io = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        en.target.classList.add("in");
-        io.unobserve(en.target);
-      });
-    },
-    { threshold: 0.15 }
+  // Scroll reveal (skipped for reduced-motion users)
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealTargets = document.querySelectorAll(
+    ".section-head, .item, .step, .story__text, .story__media, .menu__cat, .insta__grid > *, .order__panel, .policy section"
   );
-  document
-    .querySelectorAll(".item, .vcard, .section-head, .story__text, .story__media, .menu__cat")
-    .forEach(function (el) { el.classList.add("reveal"); io.observe(el); });
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          en.target.classList.add("in");
+          io.unobserve(en.target);
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealTargets.forEach(function (el) { el.classList.add("reveal"); io.observe(el); });
+  }
 })();
