@@ -185,6 +185,16 @@ a:hover { color: var(--pink); }
   color: var(--pink-dark);
   opacity: 0.75;
 }
+.ph.has-media > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ph.has-media::before,
+.ph.has-media::after { display: none; }
 .ph--bold { background: linear-gradient(150deg, #FF7CBE 0%, #FF3399 58%, #E5137E 100%); }
 .ph--bold::before { border-color: rgba(255, 255, 255, 0.45); }
 .ph--bold::after { background-image: var(--cloud-white); opacity: 0.4; }
@@ -574,7 +584,37 @@ a:hover { color: var(--pink); }
   .nav__links .btn { margin-top: 14px; text-align: center; }
   .hero__title { font-size: clamp(2.1rem, 9vw, 2.7rem); }
   .menu, .how, .insta, .order, .story { padding: 72px 0; }
-  .menu__grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  /* Swipe-through galleries: each category is one horizontal snap row,
+     bled to the screen edge, next card peeking to invite the swipe. */
+  .menu__grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(76%, 300px);
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    margin-inline: -24px;
+    padding: 4px 24px 18px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .menu__grid::-webkit-scrollbar { display: none; }
+  .menu__grid .item { scroll-snap-align: center; }
+  .insta__grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(62%, 240px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    margin-inline: -24px;
+    padding: 4px 24px 18px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .insta__grid::-webkit-scrollbar { display: none; }
+  .insta__grid .ph { scroll-snap-align: center; }
   .item__body { padding: 14px 16px 16px; }
   .item__head { flex-direction: column; gap: 2px; }
   .how__grid { grid-template-columns: 1fr; }
@@ -587,6 +627,5 @@ a:hover { color: var(--pink); }
 }
 
 @media (max-width: 460px) {
-  .menu__grid { grid-template-columns: 1fr; }
   .insta__grid { gap: 12px; }
 }
